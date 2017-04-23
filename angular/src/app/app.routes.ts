@@ -6,6 +6,6 @@ import { DataResolver } from './app.resolver';
 
 export const ROUTES: Routes = [
   { path: '',      component: HomeComponent },
-  { path: 'home',  component: HomeComponent }
+  { path: 'home',  component: HomeComponent },
   { path: '**',    component: NoContentComponent }
 ];
