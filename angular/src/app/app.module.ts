@@ -27,8 +27,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { MainComponent } from './containers/main';
 import { NotesComponent } from './containers/notes';
-import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
+import { NoContentComponent } from './containers/no-content';
 
 import { 
   AppBarComponent,
@@ -65,8 +64,7 @@ type StoreType = {
     NoteCardComponent,
     NoteCreatorComponent,
     ColorPickerComponent,
-    NoContentComponent,
-    XLargeDirective
+    NoContentComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
