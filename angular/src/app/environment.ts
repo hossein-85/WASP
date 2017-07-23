@@ -7,9 +7,14 @@ import {
   ApplicationRef,
   enableProdMode
 } from '@angular/core';
+
+import * as services from './services';
+
 // Environment Providers
 let PROVIDERS: any[] = [
   // common env directives
+  services.ApiService,
+  services.NoteService
 ];
 
 // Angular debug tools in the dev console

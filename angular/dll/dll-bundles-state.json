@@ -5,7 +5,7 @@
   },
   "zone.js": {
     "bundle": "polyfills",
-    "version": "0.8.8"
+    "version": "0.8.4"
   },
   "@angular/platform-browser": {
     "bundle": "vendor",

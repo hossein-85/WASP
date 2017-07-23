@@ -3,9 +3,12 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
+    "outDir": "dist",
+    "rootDir": "src",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "noEmit": true,
     "noEmitHelpers": true,
@@ -24,7 +27,8 @@
       "node",
       "source-map",
       "uglify-js",
-      "webpack"
+      "webpack",
+      "core-js"
     ]
   },
   "exclude": [

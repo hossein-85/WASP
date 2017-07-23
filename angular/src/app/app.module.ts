@@ -21,12 +21,21 @@ import {
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
+
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
+import { MainComponent } from './containers/main';
+import { NotesComponent } from './containers/notes';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
+
+import { 
+  AppBarComponent,
+  NoteCardComponent,
+  NoteCreatorComponent,
+  ColorPickerComponent
+} from './views'
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -50,7 +59,12 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    HomeComponent,
+    MainComponent,
+    NotesComponent,
+    AppBarComponent,
+    NoteCardComponent,
+    NoteCreatorComponent,
+    ColorPickerComponent,
     NoContentComponent,
     XLargeDirective
   ],
