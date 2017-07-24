@@ -53,16 +53,16 @@ import {
   `
 })
 export class ColorPickerComponent {
-  @Input() colors: Array<string> = [];
-  @Output() selected = new EventEmitter<string>();
+  @Input() public colors: string[] = [];
+  @Output() public selected = new EventEmitter<string>();
 
-  isSelectorVisible: boolean = false;
+  public isSelectorVisible: boolean = false;
 
-  showSelector(value: boolean) {
+  public showSelector(value: boolean) {
     this.isSelectorVisible = value;
   }
 
-  selectColor(color: string) {
+  public selectColor(color: string) {
     this.showSelector(false);
     this.selected.next(color);
   }

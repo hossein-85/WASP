@@ -60,16 +60,16 @@ import {
   `
 })
 export class NoteCardComponent {
-  @Input() note = {};
-  @Output() checked = new EventEmitter();
+  @Input() public note = {};
+  @Output() public checked = new EventEmitter();
 
-  showCheck: boolean = false;
+  public showCheck: boolean = false;
 
-  toggleCheck() {
+  public toggleCheck() {
     this.showCheck = !this.showCheck;
   }
 
-  onChecked() {
+  public onChecked() {
     this.checked.next(this.note);
   }
 }

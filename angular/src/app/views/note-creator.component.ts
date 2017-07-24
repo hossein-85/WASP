@@ -60,17 +60,17 @@ import {
   `
 })
 export class NoteCreatorComponent {
-  @Output() createNote = new EventEmitter();
-  colors: Array<string> = ['#B19CD9', '#FF6961', '#77DD77', '#AEC6CF', '#F49AC2', 'white'];
-  newNote = {
+  @Output() public createNote = new EventEmitter();
+  public colors: string[] = ['#B19CD9', '#FF6961', '#77DD77', '#AEC6CF', '#F49AC2', 'white'];
+  public newNote = {
     title: '',
     value: '',
     color: 'white'
   };
-  fullForm: boolean = false;
+  public fullForm: boolean = false;
 
-  onCreateNote() {
- 
+  public onCreateNote() {
+
     const { title, value, color } = this.newNote;
 
     if (title && value) {
@@ -81,7 +81,7 @@ export class NoteCreatorComponent {
     this.fullForm = false;
   }
 
-  reset() {
+  public reset() {
     this.newNote = {
       title: '',
       value: '',
@@ -89,11 +89,11 @@ export class NoteCreatorComponent {
     };
   }
 
-  toggle(value: boolean) {
+  public toggle(value: boolean) {
     this.fullForm = value;
   }
 
-  onColorSelect(color: string) {
+  public onColorSelect(color: string) {
     this.newNote.color = color;
   }
 }

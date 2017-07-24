@@ -31,18 +31,18 @@ import { NoteService } from '../../services';
   `
 })
 export class NotesComponent {
-  
-  notes = [
+
+  public notes = [
     {title: 'Chores', value: 'Don\'t forget to clean up', color: 'lighblue'},
     {title: 'Food', value: 'meal prep tonight please!', color: 'seagreen'},
     {title: 'Shipping Number', value: '#234654hhd88', color: 'pink'}
   ];
 
-  onNoteChecked(note, i) {
+  public onNoteChecked(note, i) {
     this.notes.splice(i, 1);
   }
 
-  onCreateNote(note) {
+  public onCreateNote(note) {
     this.notes.push(note);
   }
 

@@ -29,12 +29,12 @@ import { MainComponent } from './containers/main';
 import { NotesComponent } from './containers/notes';
 import { NoContentComponent } from './containers/no-content';
 
-import { 
+import {
   AppBarComponent,
   NoteCardComponent,
   NoteCreatorComponent,
   ColorPickerComponent
-} from './views'
+} from './views';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';

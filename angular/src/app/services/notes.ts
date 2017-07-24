@@ -4,18 +4,18 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class NoteService {
-  path: string = '/notes';
+  public path: string = '/notes';
   constructor(private apiService: ApiService) {}
 
-  createNote(note) {
-    return this.apiService.post(this.path, note)
+  public createNote(note) {
+    return this.apiService.post(this.path, note);
   }
 
-  getNotes() {
-    return this.apiService.get(this.path)
+  public getNotes() {
+    return this.apiService.get(this.path);
   }
 
-  completeNote(note) {
-    return this.apiService.delete(`${this.path}/${note.id}`)
+  public completeNote(note) {
+    return this.apiService.delete(`${this.path}/${note.id}`);
   }
 }
