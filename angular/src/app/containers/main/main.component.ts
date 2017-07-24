@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
         <notes-container></notes-container>
       </main>
     </div>
-    
   `
 })
 export class MainComponent {}
