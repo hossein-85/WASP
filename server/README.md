@@ -1,5 +1,5 @@
 # Note
-Service create notes
+Service to create notes
 
 ### Running the server
 To run the server, follow these simple steps:
