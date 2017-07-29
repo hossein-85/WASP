@@ -1,0 +1,6 @@
+{
+    "gelf": {
+        "connection": null,
+        "options" : null
+    }
+}

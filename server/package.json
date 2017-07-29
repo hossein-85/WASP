@@ -1,0 +1,38 @@
+{
+  "name": "staffshift-mobile-notification-service",
+  "version": "1.0.0",
+  "description": "Micro service responsible for sending messages to mobile applications",
+  "main": "index.js",
+  "keywords": [
+    "swagger"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "connect": "^3.2.0",
+    "js-yaml": "^3.3.0",
+    "swagger-tools": "0.9.*",
+    "mongoose": "4.4.13",
+    "config": "^1.21.0",
+    "gelf": "1.0.x",
+    "winston": "^2.2.0",
+    "winston-graylog2": "^0.4.3",
+    "z-schema": "3.17.0",
+    "newrelic": "1.28.0",
+    "async": "2.0.0-rc.5",
+    "amqplib": "^0.4.2"
+  },
+  "devDependencies": {
+    "mocha": "2.4.5",
+    "chai": "3.5.0",
+    "sinon": "1.17.4",
+    "supertest": "1.2.0",
+    "forever": "0.15.1",
+    "xunit-file": "0.0.9",
+    "leche": "^2.1.1",
+    "sinon-chai": "^2.8.0",
+    "nock": "^8.0.0",
+    "swagger-test-templates": "^1.2.0",
+    "json-schema-deref": "^0.3.2"
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "gelf": {
+        "facility": "PatProduction",
+        "logging_level": 6
+    },
+    "mongo": {
+        "database_host" : "mongodb://10.182.72.217:27017/PatProduction,mongodb://10.182.4.62:27017/PatProduction",
+        "options" : {
+            "replset": { "rs_name": "A24GroupRepl001" },
+            "config":{"autoIndex": false}
+        }
+    },
+    "logging" : [
+        {
+            "name": "gelf",
+            "level": "info",
+            "handleExceptions": true,
+            "graylog": {
+                "servers": [{"host": "127.0.0.1", "port": 12201}],
+                "facility": "Pat",
+                "bufferSize": 1400
+            }
+        }
+    ],
+    "amqp": {
+        "connection": {
+            "details": {
+                "host" : "amqps://superman:r4BB1tAttacK@95.138.155.120//pat-production?heartbeat=60"
+            }
+        }
+    }
+}

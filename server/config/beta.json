@@ -1,0 +1,31 @@
+{
+    "gelf": {
+        "connection": null
+    },
+    "mongo": {
+        "database_host" : "mongodb://10.0.5.215:27017/PatBeta,mongodb://10.0.5.216:27017/PatBeta",
+        "options" : {
+            "replset": { "rs_name": "BetaReplica001" },
+            "config": { "autoIndex": false }
+        }
+    },
+    "logging" : [
+        {
+            "name": "gelf",
+            "level": "info",
+            "handleExceptions": true,
+            "graylog": {
+                "servers": [{"host": "127.0.0.1", "port": 12201}],
+                "facility": "Pat",
+                "bufferSize": 1400
+            }
+        }
+    ],
+    "amqp" : {
+        "connection" : {
+            "details" : {
+                "host" : "amqps://superman:amb0904ICTsa@10.0.5.169//pat-beta?heartbeat=60"
+            }
+        }
+    }
+}

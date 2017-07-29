@@ -1,0 +1,16 @@
+{
+  "debug": false,
+  "mongo": {
+    "database_host" : "mongodb://localhost:27017/PatTesting",
+    "options" : {
+      "config":{"autoIndex": true}
+    }
+  },
+  "logging" : [
+    {
+      "name": "file",
+      "level": "debug",
+      "filename": "/var/log/pat/test.log"
+    }
+  ]
+}
