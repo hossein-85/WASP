@@ -1,0 +1,9 @@
+{
+  "google": {
+    "fcm_options": {
+      "headers": {
+        "Authorization" : "FCM_API_KEY"
+      }
+    }
+  }
+}

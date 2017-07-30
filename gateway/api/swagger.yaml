@@ -1,0 +1,245 @@
+---
+swagger: "2.0"
+info:
+  description: "Miscroservice created to server a node project template"
+  version: "1.0.0"
+  title: "WASP Backend"
+host: "localhost:3100"
+basePath: "/v1"
+tags:
+- name: "note"
+  description: "Operations related to note entity"
+  externalDocs:
+    description: "Find out more"
+    url: "http://swagger.io"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /note:
+    get:
+        tags:
+        - "note"
+        description: "returns all the note records"
+        operationId: "getAllNotes"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters: []
+        responses:
+          200:
+            description: "An array of notes"
+            schema:
+              type: "array"
+              items:
+                $ref: "#/definitions/noteResponse"
+          405:
+            description: "Method not supported Error. Returned if an unsupported http\
+              \ method is used."
+            schema:
+              $ref: "#/definitions/clientErrorModel"
+          default:
+            description: "unexpected error"
+            schema:
+              $ref: "#/definitions/serverErrorModel"
+        x-swagger-router-controller: "Note"
+    post:
+      tags:
+      - "note"
+      description: "Creates a note entity"
+      operationId: "createNote"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "note"
+        description: "The note entity details"
+        required: true
+        schema:
+          $ref: "#/definitions/noteRequest"
+      responses:
+        201:
+          description: "success response that the note has been added"
+          schema:
+            $ref: "#/definitions/noteResponse"
+        400:
+          description: "Validation Error. Usually caused by a missing or invalid parameter."
+          schema:
+            $ref: "#/definitions/validationErrorModel"
+        405:
+          description: "Method not supported Error. Returned if an unsupported http\
+            \ method is used."
+          schema:
+            $ref: "#/definitions/clientErrorModel"
+        406:
+          description: "Content type not supported Error. Returned if an unsupported\
+            \ content type is used."
+          schema:
+            $ref: "#/definitions/clientErrorModel"
+        413:
+          description: "Message content too big. Returned if the entity body's size\
+            \ is over the allowed limit."
+          schema:
+            $ref: "#/definitions/clientErrorModel"
+        default:
+          description: "unexpected error"
+          schema:
+            $ref: "#/definitions/serverErrorModel"
+      x-swagger-router-controller: "Note"
+
+  /status:
+    get:
+      tags:
+      - "status"
+      description: "gets the status of the messaging service"
+      operationId: "getSystemStatus"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "The server status will be returned"
+          schema:
+            $ref: "#/definitions/serverStatusResponse"
+        405:
+          description: "Method not supported Error. Returned if an unsupported http\
+            \ method is used."
+          schema:
+            $ref: "#/definitions/clientErrorModel"
+        default:
+          description: "unexpected error"
+          schema:
+            $ref: "#/definitions/serverErrorModel"
+      x-swagger-router-controller: "Status"
+definitions:
+  noteRequest:
+    type: "object"
+    required:
+    - "title"
+    - "items"
+    properties:
+      title:
+        type: "string"
+        description: "The title of the note"
+      bgColor:
+        type: "string"
+        description: "The background color of the note"
+      items:
+        type: "array"
+        items:
+          $ref: "#/definitions/item"
+
+  noteResponse:
+    type: "object"
+    required:
+    - "title"
+    - "items"
+    properties:
+      title:
+        type: "string"
+        description: "The title of the note"
+      bgColor:
+        type: "string"
+        description: "The background color of the note"
+      createdAt:
+        type: "string"
+        format: "date-time"
+        description: "The created date of the note"
+      updatedAt:
+        type: "string"
+        format: "date-time"
+        description: "The created date of the note"
+      status:
+        type: "string"
+        description: "The status of the note document"
+        enum:
+        - "new"
+        - "complete"
+      items:
+        type: "array"
+        items:
+          $ref: "#/definitions/item"
+
+  serverStatusResponse:
+    type: "object"
+    required:
+    - "up_time"
+    properties:
+      up_time:
+        type: "integer"
+
+  item:
+    type: "object"
+    properties:
+      content:
+        type: "string"
+        description: "The contents of the note"
+      status:
+        type: "string"
+        description: "The status of the note document"
+        enum:
+        - "new"
+        - "complete"
+  serverErrorModel:
+    type: "object"
+    required:
+    - "code"
+    - "message"
+    properties:
+      code:
+        type: "string"
+      message:
+        type: "string"
+      stack:
+        type: "string"
+  clientErrorModel:
+    type: "object"
+    required:
+    - "code"
+    - "message"
+    properties:
+      code:
+        type: "string"
+      message:
+        type: "string"
+      stack:
+        type: "string"
+  validationErrorModel:
+    type: "object"
+    required:
+    - "code"
+    - "message"
+    properties:
+      code:
+        type: "string"
+      message:
+        type: "string"
+      errors:
+        type: "array"
+        items:
+          $ref: "#/definitions/validationErrorSingleModel"
+  validationErrorSingleModel:
+    type: "object"
+    required:
+    - "code"
+    - "message"
+    - "path"
+    properties:
+      code:
+        type: "string"
+      message:
+        type: "string"
+      path:
+        type: "array"
+        items:
+          type: "string"
+      description:
+        type: "string"
