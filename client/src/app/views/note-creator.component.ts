@@ -21,7 +21,7 @@ import {
     }
   `],
   template: `
-    <div class="note-creator shadow-2" [ngStyle]="{'background-color': newNote.color}">
+    <div class="note-creator shadow-2" [ngStyle]="{'background-color': newNote.bgColor}">
       <form class="row" (ngSubmit)="onCreateNote()">
         <input
           type="text"
@@ -61,20 +61,30 @@ import {
 })
 export class NoteCreatorComponent {
   @Output() public createNote = new EventEmitter();
-  public colors: string[] = ['#B19CD9', '#FF6961', '#77DD77', '#AEC6CF', '#F49AC2', 'white'];
+  public colors: string[] = [
+    '#B19CD9',
+    '#FF6961',
+    '#77DD77',
+    '#AEC6CF',
+    '#F49AC2',
+    '#FFFF00',
+    '#00FFFF',
+    '#FFFFFF'
+  ];
   public newNote = {
     title: '',
     value: '',
-    color: 'white'
+    bgColor: 'white'
   };
   public fullForm: boolean = false;
 
   public onCreateNote() {
 
-    const { title, value, color } = this.newNote;
+    const { title, value, bgColor } = this.newNote;
 
     if (title && value) {
-      this.createNote.next({ title, value, color });
+      let items = [{content: value}];
+      this.createNote.next({ title, items, bgColor });
     }
 
     this.reset();
@@ -85,7 +95,7 @@ export class NoteCreatorComponent {
     this.newNote = {
       title: '',
       value: '',
-      color: 'white'
+      bgColor: 'white'
     };
   }
 
@@ -94,6 +104,6 @@ export class NoteCreatorComponent {
   }
 
   public onColorSelect(color: string) {
-    this.newNote.color = color;
+    this.newNote.bgColor = color;
   }
 }

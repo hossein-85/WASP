@@ -7,7 +7,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class ApiService {
 
-  private apiUrl: string = 'http://localhost:3000';
+  private apiUrl: string = 'http://localhost:3200/v1';
 
   private headers: Headers = new Headers({
     'Content-Type': 'application/json',

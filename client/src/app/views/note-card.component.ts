@@ -43,7 +43,7 @@ import {
   template: `
     <div
       class="note-card row shadow-1"
-      [ngStyle]="{'background-color': note.color}"
+      [ngStyle]="{'background-color': note.bgColor}"
       (mouseenter)="toggleCheck()"
       (mouseleave)="toggleCheck()"
     >
@@ -53,8 +53,8 @@ import {
       <div class="col-xs-12 title">
         {{ note.title }}
       </div>
-      <div class="col-xs-12 value">
-        {{ note.value }}
+      <div class="col-xs-12" >
+        <div *ngFor="let item of note.items"> {{ item.content }} </div>
       </div>
     </div>
   `

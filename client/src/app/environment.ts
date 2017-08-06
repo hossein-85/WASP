@@ -8,13 +8,13 @@ import {
   enableProdMode
 } from '@angular/core';
 
+import * as utilities from './utilities';
 import * as services from './services';
 
 // Environment Providers
 let PROVIDERS: any[] = [
-  // common env directives
-  services.ApiService,
-  services.NoteService
+  ...utilities.AppUtility.mapValuesToArray(utilities),
+  ...utilities.AppUtility.mapValuesToArray(services)
 ];
 
 // Angular debug tools in the dev console
