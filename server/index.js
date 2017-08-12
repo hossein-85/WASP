@@ -1,19 +1,11 @@
 'use strict';
 
-// get new relic as the first require
-// if (process.env.NODE_ENV === 'production') {
-//   var nr = require('newrelic');
-//   nr.addNamingRule('/v1/message', 'v1/message');
-//   nr.addNamingRule('/v1/status', 'v1/status');
-//   nr.addNamingRule('/v1/user/.*/register-device', 'v1/user/:user/register-device');
-// }
-
-var app = require('connect')();
+var app = require('express')();
 var http = require('http');
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var fs = require('fs');
-var serverPort = 3100;
+var serverPort = 3200;
 var mongoose = require('mongoose');
 var config = require('config');
 var ErrorHandler = require('./libs/error/ErrorHandler');
@@ -48,6 +40,40 @@ var swaggerDoc = jsyaml.safeLoad(spec);
  * @since  14 May 2016
  */
 swaggerTools.initializeMiddleware(swaggerDoc, function callback(middleware) {
+  app.use(function useCustom(req, res, next) {
+    // When we have custom headers and when certain VERBS are made, CORS will trigger
+    // a preflight check that will come through as 'OPTIONS'.
+    // For more info see https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
+    if (req.method == 'OPTIONS') {
+      var allowedHeaders = [
+        'Authorization',
+        'Content-Type',
+        'Accept',
+        'Context',
+        'If-Match',
+        'If-Modified-Since',
+        'If-None-Match',
+        'If-Unmodified-Since',
+        'X-Accept-Timezone'
+      ];
+
+      var headersAsString  = allowedHeaders.join();
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader('Access-Control-Allow-Headers', headersAsString);
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+      res.setHeader(
+        'Access-Control-Expose-Headers',
+        'ETag, X-Accept-Timezone, Link, X-Result-Count, Cache-Control, Expires'
+      );
+      res.setHeader('Access-Control-Max-Age', '1800');
+      res.setHeader('Access-Control-Allow-Credentials', true);
+      res.statusCode = 204;
+      res.end();
+    } else {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      next();
+    }
+  });
   // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
   app.use(middleware.swaggerMetadata());
 
@@ -64,7 +90,13 @@ swaggerTools.initializeMiddleware(swaggerDoc, function callback(middleware) {
 
   app.use(ErrorHandler.onError);
 
+  // if the port has been explicitly passed in, use that
+  if (process.argv[2]) {
+    serverPort = process.argv[2];
+  }
+
   // Start the server
+  
   http.createServer(app).listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
       if (process.env.NODE_ENV !== 'ci') {

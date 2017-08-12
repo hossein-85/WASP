@@ -4,7 +4,7 @@ info:
   description: "Miscroservice created to server a node project template"
   version: "1.0.0"
   title: "WASP Backend"
-host: "localhost:3100"
+host: "localhost:3200"
 basePath: "/v1"
 tags:
 - name: "note"
@@ -20,10 +20,37 @@ produces:
 - "application/json"
 paths:
   /note:
+    get:
+        tags:
+        - "note"
+        description: "returns all the note records"
+        operationId: "getAllNotes"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters: []
+        responses:
+          200:
+            description: "An array of notes"
+            schema:
+              type: "array"
+              items:
+                $ref: "#/definitions/noteResponse"
+          405:
+            description: "Method not supported Error. Returned if an unsupported http\
+              \ method is used."
+            schema:
+              $ref: "#/definitions/clientErrorModel"
+          default:
+            description: "unexpected error"
+            schema:
+              $ref: "#/definitions/serverErrorModel"
+        x-swagger-router-controller: "Note"
     post:
       tags:
       - "note"
-      description: "Creates a note entity"
+      description: "Creates a note"
       operationId: "createNote"
       consumes:
       - "application/json"
@@ -65,6 +92,121 @@ paths:
           schema:
             $ref: "#/definitions/serverErrorModel"
       x-swagger-router-controller: "Note"
+  /note/{id}:
+    put:
+      tags:
+      - "note"
+      description: "Updates a note"
+      operationId: "updateNote"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "id"
+        description: "The id of note entity that will be updated"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "note"
+        description: "The note entity details"
+        required: true
+        schema:
+          $ref: "#/definitions/noteRequest"
+      responses:
+        201:
+          description: "success response that the note has been added"
+          schema:
+            $ref: "#/definitions/noteResponse"
+        400:
+          description: "Validation Error. Usually caused by a missing or invalid parameter."
+          schema:
+            $ref: "#/definitions/validationErrorModel"
+        405:
+          description: "Method not supported Error. Returned if an unsupported http\
+            \ method is used."
+          schema:
+            $ref: "#/definitions/clientErrorModel"
+        406:
+          description: "Content type not supported Error. Returned if an unsupported\
+            \ content type is used."
+          schema:
+            $ref: "#/definitions/clientErrorModel"
+        413:
+          description: "Message content too big. Returned if the entity body's size\
+            \ is over the allowed limit."
+          schema:
+            $ref: "#/definitions/clientErrorModel"
+        default:
+          description: "unexpected error"
+          schema:
+            $ref: "#/definitions/serverErrorModel"
+      x-swagger-router-controller: "Note"
+    delete:
+        tags:
+        - "note"
+        description: "Deletes a note"
+        operationId: "deleteNote"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters:
+        - in: "path"
+          name: "id"
+          description: "The id of note entity that will be deleted"
+          required: true
+          type: "string"
+        responses:
+          200:
+            description: "An array of notes"
+            schema:
+              type: "array"
+              items:
+                $ref: "#/definitions/noteResponse"
+          405:
+            description: "Method not supported Error. Returned if an unsupported http\
+              \ method is used."
+            schema:
+              $ref: "#/definitions/clientErrorModel"
+          default:
+            description: "unexpected error"
+            schema:
+              $ref: "#/definitions/serverErrorModel"
+        x-swagger-router-controller: "Note"
+    get:
+        tags:
+        - "note"
+        description: "Returns a note"
+        operationId: "getNote"
+        consumes:
+        - "application/json"
+        produces:
+        - "application/json"
+        parameters:
+        - in: "path"
+          name: "id"
+          description: "The id of note entity that will be returned"
+          required: true
+          type: "string"
+        responses:
+          200:
+            description: "An array of notes"
+            schema:
+              type: "array"
+              items:
+                $ref: "#/definitions/noteResponse"
+          405:
+            description: "Method not supported Error. Returned if an unsupported http\
+              \ method is used."
+            schema:
+              $ref: "#/definitions/clientErrorModel"
+          default:
+            description: "unexpected error"
+            schema:
+              $ref: "#/definitions/serverErrorModel"
+        x-swagger-router-controller: "Note"
   /status:
     get:
       tags:
@@ -107,7 +249,7 @@ definitions:
       items:
         type: "array"
         items:
-          $ref: "#/definitions/item"
+          $ref: "#/definitions/itemRequest"
 
   noteResponse:
     type: "object"
@@ -138,7 +280,7 @@ definitions:
       items:
         type: "array"
         items:
-          $ref: "#/definitions/item"
+          $ref: "#/definitions/itemResponse"
 
   serverStatusResponse:
     type: "object"
@@ -148,7 +290,7 @@ definitions:
       up_time:
         type: "integer"
 
-  item:
+  itemResponse:
     type: "object"
     properties:
       content:
@@ -160,6 +302,13 @@ definitions:
         enum:
         - "new"
         - "complete"
+
+  itemRequest:
+    type: "object"
+    properties:
+      content:
+        type: "string"
+        description: "The contents of the note"
   serverErrorModel:
     type: "object"
     required:
