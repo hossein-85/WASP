@@ -9,8 +9,8 @@ var AppUtil = require('../libs/AppUtil');
 /**
  * An instance of the service helper
  *
- * @author Ryno Hartzer <ryno.hartzer@a24group.com>
- * @since  03 October 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module ServiceHelper
  */
@@ -21,8 +21,8 @@ module.exports = {
    *
    * @param {string} contextString - The context header value
    *
-   * @author Ryno Hartzer <ryno.hartzer@a24group.com>
-   * @since  29 Sep 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    *
    * @returns {Object} - A context object in the format {'id': '123', 'type': 'Agency'}
    */
@@ -46,8 +46,8 @@ module.exports = {
    *
    * @param {object} resError - The response error object
    *
-   * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
-   * @since  28 September 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    *
    * @return {Error} Return error that will be shown to user
    */
@@ -76,8 +76,8 @@ module.exports = {
    *
    * @param {object} resError - The response error object
    *
-   * @author Ryno Hartzer <ryno.hartzer@a24group.com>
-   * @since  30 September 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    *
    * @return {Error} Return error that will be shown to user
    */

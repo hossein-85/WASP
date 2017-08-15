@@ -19,8 +19,8 @@ module.exports = {
    * @param {string} exchangeName - The name of the exchange to publish to.
    * @param {object} message - The message that needs to be sent.
    *
-   * @author Gregory Smith <greg.smith@a24group.com>
-   * @since  19 May 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    *
    * @return {boolean|object} - the object containing error or a true that validation has passed.
    */
@@ -46,7 +46,6 @@ module.exports = {
     }
 
     if (amqpConnection == null) {
-      // We are currently setting the `rejectUnauthorized` due to https://github.com/A24Group/Triage/issues/9598
       amqplib.connect(amqpConfig.connection.details.host, amqpConfig.connection.options, function(err, conn) {
         if (err) {
           Logging.logAction(
@@ -86,8 +85,8 @@ module.exports = {
  * @param message - The message that will need to be published.
  * @param channel - The channel that will need to be used to publish.
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  06 July 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  */
 function publishToExchange(amqpConfig, exchangeName, message, channel) {
   for (var i = 0; i < amqpConfig.exchanges.length; i++) {
@@ -134,8 +133,8 @@ function publishToExchange(amqpConfig, exchangeName, message, channel) {
  *
  * @param {object} message - The message object to validate.
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  19 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @return {object|null} will return null when there are no errors or will return
  */
@@ -184,8 +183,8 @@ function validateMessageStructure(message) {
  *
  * @param {object} config - the config to validate.
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  20 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @returns {object|null} - will return null when there are no errors or will return
  */

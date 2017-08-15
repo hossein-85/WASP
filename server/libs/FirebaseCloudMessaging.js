@@ -78,9 +78,9 @@ module.exports = {
    *
    * @param {Object} fcmResponse - The fcm response
    * @param {function} callback - The callback to handle the result of transformation
-   * 
-   * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
-   * @since  01 June 2016
+   *
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    */
   transformFCMResponse: function (fcmResponse, callback) {
     var error = {};

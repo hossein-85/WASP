@@ -5,8 +5,8 @@ var util = require('util');
 /**
  * The Runtime Error module
  *
- * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
- * @since  12 September 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module RuntimeError
  */

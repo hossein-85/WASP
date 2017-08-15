@@ -9,8 +9,8 @@ var startDate = new Date();
  * @param {IncomingMessage} response - The http response object
  * @param {function} next - The callback used to pass control to the next action/middleware
  *
- * @author Willem Albrecht <willem.albrecht@a24group.com>
- * @since  02 June 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  */
 exports.getSystemStatus = function(args, res, next) {
   var now = new Date();

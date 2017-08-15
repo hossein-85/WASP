@@ -3,8 +3,8 @@
 /**
  * The TestUtil module
  *
- * @author Neil Nienaber <neil.nienaber@a24group.com>
- * @since  08 June 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module TestUtil
  */
@@ -16,8 +16,8 @@ module.exports = {
    * @param {string} iso_string_date the date as an iso string
    * @param {integer} range the range that should be considered should be bigger than 0, defaults to 60
    *
-   * @author Neil Nienaber <neil.nienaber@a24group.com>
-   * @since  08 June 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    */
   isWithinRange: function(iso_string_date, range) {
     if (!range) {

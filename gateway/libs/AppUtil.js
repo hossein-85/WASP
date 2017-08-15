@@ -17,8 +17,8 @@ module.exports = {
    *
    * @param {Array} data - The variable to check.
    *
-   * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
-   * @since  02 June 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    *
    * @return {boolean} will return true of the given array is empty otherwise false
    */
@@ -31,8 +31,8 @@ module.exports = {
    * @param {object} err - The error that occurred for the find.
    * @param {function} callback - The callback.
    *
-   * @author Gregory Smith <greg.smith@a24group.com>
-   * @since  06 June 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    */
   handleMongooseFindError: function(err, callback)  {
     if (err.name == 'CastError') {
@@ -59,8 +59,8 @@ module.exports = {
    * @param {object} object - The message object to validate.
    * @param {object} schema - The schema against which the object will be validated
    *
-   * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
-   * @since  02 June 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    *
    * @return {object|null} will return null when there are no errors or will return
    */

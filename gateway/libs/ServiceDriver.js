@@ -11,8 +11,8 @@ var ObjectHelper = require('../libs/ObjectHelper');
  * @param {Object} host - The optional service configurations that will be used to make the http call
  * @param {Object} protocol - The optional service configurations that will be used to make the http call
  *
- * @author Hadi Shayesteh <hadi.shayesteh@a24group.com>
- * @since  23 February 2017
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module ServiceDriver
  */
@@ -68,8 +68,8 @@ ServiceDriver.prototype.setPath = function (path) {
  * @param {function} funcHandleResponse - The function responsible for handling the response
  * @param {function} callback - The callback that will handle the result of the service call
  *
- * @author Ryno Hartzer <ryno.hartzer@a24group.com>
- * @since  28 October 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  */
 ServiceDriver.prototype.makeBasicCall = function makeBasicCall(funcHandleResponse, callback) {
   var config = this.config;
@@ -174,8 +174,8 @@ ServiceDriver.prototype.makeBasicCall = function makeBasicCall(funcHandleRespons
  * @param {Object} funcHandleResponse - The function responsible for handling the post response
  * @param {function} callback - The callback that will handle the result of the service call
  *
- * @author Marylene Sawyer <marylene.sawyer@a24group.com>
- * @since  1 February 2017
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  */
 ServiceDriver.prototype.post = function post(payload, funcHandleResponse, callback) {
 

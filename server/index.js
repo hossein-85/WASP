@@ -36,8 +36,8 @@ var swaggerDoc = jsyaml.safeLoad(spec);
  * @param {object} swaggerDoc - The swagger document object
  * @param {function} callback - The callback
  *
- * @author Willem Albrecht <willem.albrecht@a24group.com>
- * @since  14 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  */
 swaggerTools.initializeMiddleware(swaggerDoc, function callback(middleware) {
   app.use(function useCustom(req, res, next) {

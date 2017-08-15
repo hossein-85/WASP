@@ -8,8 +8,8 @@ var Logging = require('./Logging');
 /**
  * The Message Locks module
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  26 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module MessageLockUtil
  */
@@ -23,8 +23,8 @@ module.exports = {
    * @param {String} messageId - The id of the message.
    * @param {function} callback - The callback.
    *
-   * @author Gregory Smith <greg.smith@a24group.com>
-   * @since  26 May 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    */
   addLock: function (lockType, timeExpires, deviceId, messageId, callback) {
     var messageLock = new MessageLock();
@@ -55,9 +55,8 @@ module.exports = {
    * @param {array} registeredDevices - The array of device ids.
    * @param {function} callback - The callback function that needs to be executed.
    *
-   * @author Gregory Smith <greg.smith@a24group.com>
-   * @author Neil Nienaber <neil.nienaber@a24group.com>
-   * @since  26 May 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    */
   manageNotificationLocks: function (notificationId, registeredDevices, callback) {
     var query = {
@@ -125,8 +124,8 @@ module.exports = {
    * @param {object} query - The query to match on
    * @param {function} callback - The callback as function(err)
    *
-   * @author Ryno Hartzer <ryno.hartzer@a24group.com>
-   * @since  27 May 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    */
   removeLocks: function (query, callback) {
     // For more info see http://mongoosejs.com/docs/api.html#query_Query-remove
@@ -150,9 +149,8 @@ module.exports = {
  *
  * @param {MessageLock} singleLock The lock object
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @author Neil Nienaber <neil.nienaber@a24group.com>
- * @since  26 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @private
  *

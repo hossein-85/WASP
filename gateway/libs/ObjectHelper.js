@@ -2,8 +2,8 @@
 /**
  * An instance of the object helper module
  *
- * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
- * @since  28 September 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module ObjectHelper
  */
@@ -16,8 +16,8 @@ module.exports = {
    * @param {object} objOne - The object to which the properties will be merged
    * @param {object} objTwo - The object from which the properties will be merged
    *
-   * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
-   * @since  28 September 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    *
    * @returns {object} objOne a new object based on obj1 and obj2
    */
@@ -38,8 +38,8 @@ module.exports = {
    * @param {object} objOne - The object to which the properties will be merged
    * @param {object} objTwo - The object from which the properties will be merged
    *
-   * @author Hadi Shayesteh <hadi.shayesteh@a24group.com>
-   * @since  27 February 2017
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    *
    * @returns {object} objThree a new object based on obj1 and obj2
    */

@@ -15,8 +15,8 @@ const NOTE_WAS_NOT_FOUND = 'NOTE_WAS_NOT_FOUND';
 /**
  * Module used to keep the validation error codes
  *
- * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
- * @since  14 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module ErrorCodes
  */

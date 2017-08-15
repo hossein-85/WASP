@@ -5,8 +5,8 @@ var util = require('util');
 /**
  * The Resource Not Found Error module
  *
- * @author Marylene Sawyer <marylene.sawyer@a24group.com>
- * @since  09 September 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module ResourceNotFoundError
  */

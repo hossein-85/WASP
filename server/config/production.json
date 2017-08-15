@@ -4,9 +4,11 @@
         "logging_level": 6
     },
     "mongo": {
-        "database_host" : "mongodb://10.182.72.217:27017/PatProduction,mongodb://10.182.4.62:27017/PatProduction",
+        //Todo update the host
+        "database_host" : "",
         "options" : {
-            "replset": { "rs_name": "A24GroupRepl001" },
+            //Todo update the following
+            "replset": { "rs_name": "" },
             "config":{"autoIndex": false}
         }
     },
@@ -25,7 +27,8 @@
     "amqp": {
         "connection": {
             "details": {
-                "host" : "amqps://superman:r4BB1tAttacK@95.138.155.120//pat-production?heartbeat=60"
+                //Todo update the host
+                "host" : ""
             }
         }
     }

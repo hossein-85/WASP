@@ -12,8 +12,8 @@ function AmqpConsumer () {}
  *
  * @param {object} amqpConfig - The amqp configuration.
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  20 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  */
 AmqpConsumer.consumeAmqpMessages = function consumeAmqpMessages(amqpConfig) {
   amqp.connect(amqpConfig.connection.details.host, amqpConfig.connection.options, function(err, conn) {
@@ -40,14 +40,13 @@ AmqpConsumer.consumeAmqpMessages = function consumeAmqpMessages(amqpConfig) {
 /**
  * This will subscribe to the given queue.
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  06 July 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @param conn - The connection to subscribe with.
  * @param givenQueue - The queue to subscribe to.
  */
 function subscribeToQueue(conn, givenQueue) {
-  // We are currently setting the `rejectUnauthorized` due to https://github.com/A24Group/Triage/issues/9598
   conn.createChannel(function(err, ch) {
     ch.assertQueue(givenQueue.name, givenQueue.publish_options, function(err, q) {
       if (err) {
@@ -126,8 +125,8 @@ module.exports = AmqpConsumer;
  *
  * @param {object} message - The message object to validate.
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  19 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @return {object|null} will return null when there are no errors or will return
  */
@@ -176,8 +175,8 @@ function validateMessageStructure(message) {
  *
  * @param {object} amqpConfig - The amqp configuration.
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  19 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @return {Array} the array of queue objects
  */

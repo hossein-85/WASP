@@ -12,8 +12,8 @@ var logger = null;
 /**
  * The Logging module
  *
- * @author Gregory Smith <greg.smith@a24group.com>
- * @since  14 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module Logging
  */
@@ -36,8 +36,8 @@ module.exports = {
    * @param {string} logMessage - The log message
    * @param {object} extraFieldsObject - The extra information that needs to be logged
    *
-   * @author Gregory Smith <greg.smith@a24group.com>
-   * @since  14 May 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    */
   logAction: function (logLevel, logMessage, extraFieldsObject) {
     // This will create the empty array of transports which we will add to.

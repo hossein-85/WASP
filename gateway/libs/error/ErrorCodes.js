@@ -8,8 +8,8 @@ const TITLE_ALREADY_EXISTS = 'TITLE_ALREADY_EXISTS';
 /**
  * Module used to keep the validation error codes
  *
- * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
- * @since  14 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module ErrorCodes
  */

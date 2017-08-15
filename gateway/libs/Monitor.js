@@ -23,8 +23,8 @@ module.exports = {
      * @param {string} group - group is optional, and allows you to group types of jobs together. This should follow similar rules as the name.
      * @param {function} callback - handle is a function that encompases your background job.
      *
-     * @author Willem Albrecht <willem.albrecht@a24group.com>
-     * @since  25 Jul 2016
+     * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+     * @since  14 Aug 2017
      *
      * @return {function} returns the wrapped function that will be used for the monitoring.
      */
@@ -44,8 +44,8 @@ module.exports = {
      * This takes no arguments and must be called to end any custom transaction.
      * It will detect what kind of transaction was active and end it.
      *
-     * @author Willem Albrecht <willem.albrecht@a24group.com>
-     * @since  25 Jul 2016
+     * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+     * @since  14 Aug 2017
      *
      * @return void
      */

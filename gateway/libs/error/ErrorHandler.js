@@ -7,8 +7,8 @@ var AppUtil = require('../../libs/AppUtil');
 /**
  * The module used for building and formatting the applications http error responses
  *
- * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
- * @since  14 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @module ErrorHandler
  */
@@ -24,8 +24,8 @@ module.exports = {
    * @param {IncomingMessage} response - The http response object
    * @param {function} next The callback used to pass control to the next action/middleware
    *
-   * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
-   * @since  14 May 2016
+   * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+   * @since  14 Aug 2017
    */
   onError: function (error, request, response, next) {
     if (error.status) {
@@ -53,8 +53,8 @@ module.exports = {
  * @param {IncomingMessage} response - The http response object
  * @param {Number} statusCode - The status code which will be used to determine the type of the error
  *
- * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
- * @since  14 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @returns {Error} The error that has been prepared for display
  */
@@ -100,8 +100,8 @@ function _prepareError(error, response, statusCode) {
  * 
  * @param {Error} error - The error object that will be prepared for display
  *
- * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
- * @since  14 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @returns {Object} The error that has been prepared for display
  */
@@ -130,8 +130,8 @@ function _prepareClientErrorForDisplay(error) {
  * @param {Error} error - The error object that will be prepared for display
  * @param {IncomingMessage} response - The http response object
  *
- * @author Hossein Shayesteh <hossein.shayesteh@a24group.com>
- * @since  14 May 2016
+ * @author Hadi Shayesteh <Hadishayesteh@gmail.com>
+ * @since  14 Aug 2017
  *
  * @returns {Object} The error that has been prepared for display
  */
